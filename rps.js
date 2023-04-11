@@ -10,7 +10,21 @@ function getPlayerChoice() {
     return playerchoice.toLowerCase()
 }
 
-function playOneRound() {
-        computerchoice=getComputerChoice()
+function playOneRound(playerSelection,computerSelection) {
+        computerSelection=getComputerChoice()
         playerSelection=getPlayerChoice()
-}
+
+        console.log(`Computer chose ${computerSelection} and Player chose ${playerSelection}.`)
+
+        if ((computerSelection == "rock" && playerSelection == "scissors") ||
+        (computerSelection == "scissors" && playerSelection == "paper") ||
+        (computerSelection == "paper" && playerSelection == "rock")) {
+            console.log("Computer wins!")
+        }
+        else if (computerSelection==playerSelection) {
+            console.log("Tie game!")
+        }
+        else {
+            console.log("Player wins!")
+        }
+};
