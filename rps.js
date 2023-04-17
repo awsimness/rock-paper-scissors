@@ -10,10 +10,16 @@ function getComputerChoice () {
 function playOneRound(playerSelection,computerSelection) {
         computerSelection=getComputerChoice()
         playerSelection=prompt("Choose your poison : \n1. Rock \n2. Paper \n3. Scissors")
+        playerSelection=playerSelection.toLowerCase()
 
         console.log(`Computer chose ${computerSelection} and Player chose ${playerSelection}.`)
 
-        if ((computerSelection == "rock" && playerSelection == "scissors") ||
+
+        if (playerSelection!='rock'||'paper'||'scissors'){
+            console.log("Bad input. Enter one of the three given options.")
+            return;
+        }
+        else if ((computerSelection == "rock" && playerSelection == "scissors") ||
         (computerSelection == "scissors" && playerSelection == "paper") ||
         (computerSelection == "paper" && playerSelection == "rock")) {
             console.log("Computer wins!")
