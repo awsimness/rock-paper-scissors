@@ -9,40 +9,30 @@ function getComputerChoice () {
 
 function playOneRound(playerSelection,computerSelection) {
         computerSelection=getComputerChoice()
-        playerSelection=prompt("Choose your poison : \n1. Rock \n2. Paper \n3. Scissors")
-        playerSelection=playerSelection.toLowerCase()
 
-        console.log(`Computer chose ${computerSelection} and Player chose ${playerSelection}.`)
+        let div=document.querySelector('div')
+        div.innerHTML=`Computer chose ${computerSelection} and Player chose ${playerSelection}.`
 
-
-        if (playerSelection!='rock'||'paper'||'scissors'){
-            console.log("Bad input. Enter one of the three given options.")
-            return;
-        }
-        else if ((computerSelection == "rock" && playerSelection == "scissors") ||
+        let div2=document.querySelector('.div2')
+        
+        if ((computerSelection == "rock" && playerSelection == "scissors") ||
         (computerSelection == "scissors" && playerSelection == "paper") ||
         (computerSelection == "paper" && playerSelection == "rock")) {
-            console.log("Computer wins!")
+            div2.innerHTML="Computer wins!"
             computerScore++;
         }
         else if (computerSelection==playerSelection) {
-            console.log("Tie game!")
+            div2.innerHTML="Tie game!"
         }
         else {
-            console.log("Player wins!")
+            div2.innerHTML="Player wins!"
             playerScore++;
         }
 };
 
-function game() {
-    for (i=0;i<5;i++) {
-        playOneRound()
-    }
+window.addEventListener('click',function(e){
+    let playerSelection=(e.srcElement.className)
+    playerSelection=playerSelection.toString()
+    playOneRound(playerSelection)
+})
 
-    if (playerScore>computerScore) {
-        console.log("After numerous battles, the winner of the war is Player!")
-    }
-    else {
-        console.log("After numerous battles, the winner of the war is Computer!")
-    }
-}
