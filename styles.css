@@ -1,8 +1,13 @@
 body {
     background-image:url(./images/bg.jpg);
     background-size: cover;
+    font-family: monospace;
 }
 
-div {
+.div1,.div2 {
+    color: aliceblue;
+}
+
+.scores {
     color: aliceblue;
 }
