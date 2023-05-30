@@ -53,7 +53,8 @@ function playOneRound(playerSelection,computerSelection) {
         }
 };
 
-window.addEventListener('click',function(e){
+const btns=document.querySelector('.btns')
+btns.addEventListener('click',function(e){
     let playerSelection=(e.srcElement.className)
     playerSelection=playerSelection.toString()
     playOneRound(playerSelection)

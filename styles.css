@@ -10,4 +10,32 @@ body {
 
 .scores {
     color: aliceblue;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    font-size: 50px;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 300px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+button {
+    padding: 30px;
+    border-radius: 30px;
+    background-color: blue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+    box-shadow: inset;
 }
